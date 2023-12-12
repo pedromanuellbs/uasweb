@@ -15,17 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'page' => 'welcome',
+    ]);
 });
 
 
 
-Route::get('/tarif-train', function () {
-    return view('tarif-train');
-});
+// Route::get('/tarif-train', function () {
+//     return view('tarif-train');
+// });
 
 Route::get('/lokasi-train', [trainsController::class, 'showlokasi']);
 Route::get('/jadwal-train', [trainsController::class, 'showtrain']);
 Route::get('/lokasi-train/{id}', [trainsController::class, 'show']);
 Route::get('/tarif-train', [trainsController::class, 'showtarif']);
+Route::get('/login-train', [trainsController::class, 'showlogin']);
 

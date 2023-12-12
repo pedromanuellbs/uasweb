@@ -20,6 +20,7 @@ class trainsController extends Controller
         $stasiuns = stasiun::all();
 
         return view('lokasi-train', [
+            'page' => 'lokasi',
             'title' => 'Trains',
             'train' => $trains,
             'stasiun' => $stasiuns,
@@ -35,6 +36,7 @@ class trainsController extends Controller
         $stasiuns = stasiun::all();
 
         return view('jadwal-train', [
+            'page' => 'jadwal',
             'title' => 'Trains',
             'train' => $trains,
             'stasiun' => $stasiuns,
@@ -46,6 +48,7 @@ class trainsController extends Controller
         $trains = train::where('id', $id);
 
         return view('lokasi-train', [
+            'page' => 'lokasi',
             'title' => 'Detail',
             'train' => $trains,
             
@@ -58,6 +61,20 @@ class trainsController extends Controller
         $stasiuns = stasiun::all();
 
         return view('tarif-train', [
+            'page' => 'tarif',
+            'title' => 'Trains',
+            'train' => $trains,
+            'stasiun' => $stasiuns,
+        ]);
+    }
+
+    public function showlogin()
+    {
+        $trains = train::all();
+        $stasiuns = stasiun::all();
+
+        return view('login-train', [
+            'page' => 'login',
             'title' => 'Trains',
             'train' => $trains,
             'stasiun' => $stasiuns,
