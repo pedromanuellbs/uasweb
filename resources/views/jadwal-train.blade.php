@@ -104,7 +104,7 @@
         .tabel_durasi {
             border-radius: 10px;
             overflow: hidden;
-            background-color: blue;
+            background-color: #ff6f00;
         }
 
         .ikon {
@@ -119,17 +119,36 @@
             width: 85px;
             
         }
-        
-
+        .kartu-form {
+            border-radius: 10px;
+            width: 1140px;
+        }
+        .cari-pesan-tiket-btn {
+            background-color: #ff6f00;
+            border-radius: 4px;
+            width: 200px;
+            height: 40px;
+            font-size: 16px;
+            
+        }
+        .ganti-pencarian-btn {
+            background-color: #ff6f00;
+            border-radius: 4px;
+            width: 150px;
+            height: 40px;
+            font-size: 16px;
+            
+        }
 
     </style>
-    <div class="card mx-auto col-md-6 justify-content-center container mt-5">
+    <div class="kartu-form card mx-auto col-md-6 justify-content-center container mt-5">
         <div class="top-cols">
             <h3 class="goesto">Pemesanan Tiket Kereta Api</h3>
         </div>
         <div class="header">
             <p>Senin, 11 Desember 2023</p>
-            <button class="button">Ganti Pencarian</button>
+            <input class="ganti-pencarian-btn btn btn-primary btn-sample btn-search-booking" name="submit" id="submit"
+                            type="submit" value="Cari &amp; Pesan Tiket">
         </div>
 
         <div class="content">
@@ -237,7 +256,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <input class="btn btn-primary btn-sample btn-search-booking" name="submit" id="submit"
+                        <input class="cari-pesan-tiket-btn btn btn-primary btn-sample btn-search-booking" name="submit" id="submit"
                             type="submit" value="Cari &amp; Pesan Tiket">
                     </div>
                 </div>
@@ -252,90 +271,62 @@
 
 
     <!-- Form Stasiun -->
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-4">Pilih Stasiun</h5>
-                        <div class="input-group mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Dari stasiun mana?</option>
-                                <option value="WIL1" disabled>------------AREA JABODETABEK------------
-                                </option>
-                                <option value="CK">CISAUK</option>
-                                <option value="CK">TANAH ABANG</option>
-                                <option value="PH">PALMERAH</option>
-                                <option value="RB">RANGKASBITUNG</option>
-                                <option value="DK">DEPOK</option>
-                                <option value="DB">DEPOK BARU</option>
-                                <option value="DI">DURI</option>
-                                <option value="GL">GROGOL</option>
-                                <option value="JA">JAKARTAKOTA</option>
-                                @foreach ($stasiun as $items)
-                                    <option value={{ $items['id'] }}>{{ $items['stasiun_tiba'] }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="d-grid gap-1">
-                            <a href='/lokasi-train/'>
-                                <button class="btn btn-primary text-white" type="button">
-                                    SUBMIT
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Jam Datang -->
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="card-body">
-                        <h5 class="card-title text-center mb-4">Jam Datang</h5>
-                        <div class="input-group mb-3">
-                            <select class="form-select" id="jam-from">
-                                <option selected>-</option>
-                                <!-- Jam options here -->
-                            </select>
+        {{-- <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Pilih Stasiun</h5>
+                            <div class="input-group mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Dari stasiun mana?</option>
+                                    <option value="WIL1" disabled>------------AREA JABODETABEK------------
+                                    </option>
+                                    <option value="CK">CISAUK</option>
+                                    <option value="CK">TANAH ABANG</option>
+                                    <option value="PH">PALMERAH</option>
+                                    <option value="RB">RANGKASBITUNG</option>
+                                    <option value="DK">DEPOK</option>
+                                    <option value="DB">DEPOK BARU</option>
+                                    <option value="DI">DURI</option>
+                                    <option value="GL">GROGOL</option>
+                                    <option value="JA">JAKARTAKOTA</option>
+                                    @foreach ($stasiun as $items)
+                                        <option value={{ $items['id'] }}>{{ $items['stasiun_tiba'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="d-grid gap-1">
+                                <a href='/lokasi-train/'>
+                                    <button class="btn btn-primary text-white" type="button">
+                                        SUBMIT
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Tabel jadwal kereta -->
-
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="table-responsive mt-4">
-                    <table class="tabel_durasi table table-striped" style="width: 1150px; margin: 0 auto;">
-                        <thead>
-                            <tr>
-                                <th style="padding: 10px;">Kereta</th>
-                                <th style="padding: 10px;">Berangkat</th>
-                                <th style="padding: 10px;">Durasi</th>
-                                <th style="padding: 10px;">Tiba</th>
-                                <th style="padding: 10px;">Harga</th>
-                            </tr>
-                        </thead>
-                        <!-- Tambahkan konten tabel di sini -->
-                    </table>
+        <!-- Jam Datang -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Jam Datang</h5>
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="jam-from">
+                                    <option selected>-</option>
+                                    <!-- Jam options here -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    
-    
-    
-
+        </div> --}}
     {{-- copasan dari bawah --}}
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -372,11 +363,8 @@
            
         </div>
     </div>
-
-
-
     <!-- Card Tarif Kereta -->
-    <div class="content container mt-5">
+    <div class="content container mt-2">
         <div class="row justify-content-center">
             @foreach ($stasiun as $items)
                 <div class="bungkus">

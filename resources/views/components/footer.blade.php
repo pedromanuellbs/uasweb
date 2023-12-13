@@ -5,13 +5,13 @@
         height: 100%;
     }
 
-    .footer {
+    /* .footer {
         position: fixed;
         bottom: 0;
         width: 100%;
         background-color: #ff8000;
         z-index: 100;
-    }
+    } */
 
     .footer-content {
         display: flex;
@@ -20,8 +20,8 @@
     }
 </style>
 
-<footer class="fixed-bottom b-0" style="width: 100%; background-color: #ff8000; z-index: 100;">
+<footer style="width: 100%; background-color: #ff8000; z-index: 100; flex-shrink: none;">
     <div class="d-flex justify-content-center footer-content">
-        <div class="sticky-md-top">&copy; {{ date('Y') }} Copyright KELOMPOK 2 UTS PWL.</div>
+        <div class="sticky-md-top">&copy; {{ date('Y') }} Copyright KELOMPOK 2 UAS PWL.</div>
     </div>
 </footer>

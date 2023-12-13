@@ -1,5 +1,12 @@
 <!-- Background Overlay -->
-<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: -1;"></div>
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: -1;">
+</div>
+
+<style>
+    .center-content {
+        text-align: center;
+    }
+</style>
 
 
 @extends('layout.layout_user')
@@ -40,27 +47,39 @@
         </div>
     </div>
 
-    <!-- Tampilan jadwal kereta -->
+    <!-- Tampilan lokasi kereta -->
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-15">
-                <div class="card shadow-lg p-2 mb-4 bg-white rounded">
+            <div class="col-md-6">
+                <div class="card  shadow-lg p-2 mb-4 bg-white rounded text-center">
+                    <div class="card-body">
+                        <h1>Stasiun Palmerah</h1>
+                        <img class="img-fluid" src="https://appassets.mvtdev.com/map/41/s/2044/53521257.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card  shadow-lg p-2 mb-4 bg-white rounded text-center">
+                            <div class="card-body">
+                                <h1>Stasiun Cisauk</h1>
+                                <img class="img-fluid" src="https://appassets.mvtdev.com/map/41/s/2044/20293754.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- <div class="card shadow-lg p-2 mb-4 bg-white rounded">
                     <div class="card-body">
                         <div class="col-md-2 col-2 icon-kode-kereta">
                             <img src="https://commuterline.id/img/icon kereta.png" alt="">
                         </div>
                     </div>
-                </div>
-                <div class="card shadow-lg p-2 mb-4 bg-white rounded">
-                    <div class="card-body">
-                        <div class="col-md-2 col-2 icon-kode-kereta">
-                            <img src="https://commuterline.id/img/icon kereta.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Tarif Kereta -->
-                <div class="row justify-content-center mt-4">
+                </div> --}}
+                    <!-- Card Tarif Kereta -->
+                    {{-- <div class="row justify-content-center mt-4">
                     @foreach ($train as $item)
                         <div class="col-md-6">
                             <div class="card mb-3">
@@ -88,11 +107,10 @@
                             </div>
                         </div>
                     @endforeach
+                </div> --}}
+
                 </div>
             </div>
+        @endsection
 
-        </div>
-    </div>
-@endsection
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
