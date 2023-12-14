@@ -10,8 +10,8 @@ class train extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function trains()
+    public function stasiun()
     {
-        return $this->hasMany(trains::class);
+        return $this->hasMany(stasiun::class);
     }
 }

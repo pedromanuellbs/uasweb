@@ -12,6 +12,6 @@ class stasiun extends Model
 
     public function trains()
     {
-        return $this->belongsTo(trains::class);
+        return $this->belongsTo(train::class);
     }
 }

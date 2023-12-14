@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(train::class)->constrained();
             $table->string('stasiun_awal');
             $table->string('stasiun_tiba');
+            $table->timestamps();
         });
     }
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('kode_kereta');
             $table->string('jam_berangkat');
             $table->string('jam_tiba');
-            
+            $table->string('tgl_berangkat');
+            $table->timestamps();
 
         });
     }
